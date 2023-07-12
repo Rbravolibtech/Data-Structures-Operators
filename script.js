@@ -52,8 +52,17 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
-console.log('----OR ----');
 
+restaurant.numGuests = 0;
+const guest = restaurant.numGuests || 10;
+console.log(guest);
+
+//Nullish:null and undefined (not 0 or '')
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect);
+
+/*=========== SHORT CIRCUITING (&& ||) ===============/*
+console.log('----OR ----');
 //USE ANY DATA TYPE, RETURN ANY DATA TYPE, SHORT-CIRCUITING
 
 console.log(3 || 'jonas');

@@ -51,6 +51,38 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+/*==============OPTIONAL CHAINING ============== */
+
+if (restaurant.openingHours && restaurant.openingHours.mon)
+  console.log(restaurant.openingHours.mon.open);
+//console.log(restaurant.openingHours.mon.open);
+
+//WITH OPTIONAL CHAINING
+console.log(restaurant.openingHours.mon?.open);
+console.log(restaurant.openingHours.mon?.open);
+
+//EXAMPLE
+const days = ['mon', 'tues', 'wed', 'thu', 'fri', 'sat', 'sun'];
+for (const day of days) {
+  const open = restaurant.openingHours[day]?.open || 'closed';
+  console.log(`On ${day}, we open at ${open}`);
+}
+
+//METHODS
+
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist');
+
+// ARRAYS
+
+// const users = [{ name: 'Bravo', email: 'helloBravo.io' }];
+// const users = [];
+console.log(users[0]?.name ?? 'User array empty');
+
+if (users.length > 0) console.log(users[0].name);
+else console.log('user array empty');
+
+///
 /*==============LOOPING ARRAYS : THE FOR-OF LOOP ============== */
 // const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 

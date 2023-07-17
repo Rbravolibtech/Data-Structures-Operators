@@ -51,68 +51,116 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+/*==============WORKING WITH STRINGS PART 3 ============== */
+
+//split and join
+
+// console.log('a+very+nice+string'.split('+'));
+// console.log('yuyo bravo'.split(' '));
+// const [firstName, lastName] = 'yuyo bravo'.split(' ');
+// const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+// console.log(newName);
+// const capitalizeName = function (name) {
+//   const names = name.split(' ');
+//   const namesUpper = [];
+//   for (const n of names) {
+//     // namesUpper.push(n[0].toUpperCase() + n.slice(1));
+//     namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+//   }
+//   console.log(namesUpper.join(' '));
+// };
+// capitalizeName('jessica ann smith davis');
+// capitalizeName('yuyo bravo');
+
+// //padding
+
+// const message = ' Go to gate 23! Now';
+// console.log(message.padStart(25, '+').padEnd(35, '+'));
+// console.log('yuyo'.padStart(25, '+').padEnd(35, '+'));
+
+// const maskCreditCard = function (number) {
+//   const str = number + '';
+//   const last = str.slice(-4);
+//   return last.padStart(str.length, '*');
+// };
+
+// console.log(maskCreditCard(98765432182858));
+// console.log(maskCreditCard(987654321744141));
+// console.log(maskCreditCard(9876543210123456789));
+
+// //repeat
+
+// const message2 = 'Bad weather... All Departures Delayed... ';
+// console.log(message2.repeat(5));
+// const planesInLine = function (n) {
+//   console.log(`There are ${n} planes in line ${'🛩'.repeat(n)}`);
+// };
+// planesInLine(5);
+// planesInLine(3);
+// planesInLine(12);
+
 /*==============WORKING WITH STRINGS PART 2 ============== */
-const airline = 'TAP Air Mexico';
+// const airline = 'TAP Air Mexico';
 
-console.log(airline.toLowerCase());
-console.log(airline.toUpperCase());
+// console.log(airline.toLowerCase());
+// console.log(airline.toUpperCase());
 
-//fix  capitalization in name
+// //fix  capitalization in name
 
-const passenger = 'bRaVO';
-const passengerLower = passenger.toLowerCase();
-const passengerCorrect =
-  passengerLower[0].toLocaleUpperCase() + passengerLower.slice(1);
-console.log(passengerCorrect);
+// const passenger = 'bRaVO';
+// const passengerLower = passenger.toLowerCase();
+// const passengerCorrect =
+//   passengerLower[0].toLocaleUpperCase() + passengerLower.slice(1);
+// console.log(passengerCorrect);
 
-// comparing email
+// // comparing email
 
-const email = 'hello@bravo.io';
-const loginEmail = ' Hello@Bravo.Io \n';
+// const email = 'hello@bravo.io';
+// const loginEmail = ' Hello@Bravo.Io \n';
 
-//const lowerEmail = loginEmail.toLocaleLowerCase();
-//const trimmedEmail = lowerEmail.trim();
-const normalizedEmail = loginEmail.toLocaleLowerCase().trim();
+// //const lowerEmail = loginEmail.toLocaleLowerCase();
+// //const trimmedEmail = lowerEmail.trim();
+// const normalizedEmail = loginEmail.toLocaleLowerCase().trim();
 
-console.log(normalizedEmail);
-console.log(email === normalizedEmail);
+// console.log(normalizedEmail);
+// console.log(email === normalizedEmail);
 
-//replacing
+// //replacing
 
-const priceGB = '288,97£';
-const priceUS = priceGB.replace('£', '$').replace(',', '.');
-console.log(priceUS);
+// const priceGB = '288,97£';
+// const priceUS = priceGB.replace('£', '$').replace(',', '.');
+// console.log(priceUS);
 
-const announcement =
-  'All passengers come to boarding door 23. Boarding door 23!';
-console.log(announcement.replace('door', 'gate'));
-console.log(announcement.replaceAll('door', 'gate'));
-console.log(announcement.replace(/door/g, 'gate'));
+// const announcement =
+//   'All passengers come to boarding door 23. Boarding door 23!';
+// console.log(announcement.replace('door', 'gate'));
+// console.log(announcement.replaceAll('door', 'gate'));
+// console.log(announcement.replace(/door/g, 'gate'));
 
-// booleans
+// // booleans
 
-const plane = 'AIRBUS A32neo';
-console.log(plane.includes('A320'));
-console.log(plane.includes('BOEING'));
-console.log(plane.startsWith('AIR'));
+// const plane = 'AIRBUS A32neo';
+// console.log(plane.includes('A320'));
+// console.log(plane.includes('BOEING'));
+// console.log(plane.startsWith('AIR'));
 
-if (plane.startsWith('AIRBUS') && plane.endsWith('neo')) {
-  console.log('part of the AIRBUS FAMILY');
-}
+// if (plane.startsWith('AIRBUS') && plane.endsWith('neo')) {
+//   console.log('part of the AIRBUS FAMILY');
+// }
 
-//practice exercise
+// //practice exercise
 
-const checkBaggage = function (items) {
-  const baggage = items.toLowerCase();
-  if (baggage.includes('knife') || baggage.includes('gun')) {
-    console.log('You are NOT allowed on board');
-  } else {
-    console.log('Welcome aboard!');
-  }
-};
-checkBaggage('I have a laptop, some Food and a pocket Knife');
-checkBaggage('Socks and camera');
-checkBaggage('Got some snacks and a gun for protection');
+// const checkBaggage = function (items) {
+//   const baggage = items.toLowerCase();
+//   if (baggage.includes('knife') || baggage.includes('gun')) {
+//     console.log('You are NOT allowed on board');
+//   } else {
+//     console.log('Welcome aboard!');
+//   }
+// };
+// checkBaggage('I have a laptop, some Food and a pocket Knife');
+// checkBaggage('Socks and camera');
+// checkBaggage('Got some snacks and a gun for protection');
 /*==============WORKING WITH STRINGS PART 1 ============== */
 
 // const airline = 'TAP Air Mexico';

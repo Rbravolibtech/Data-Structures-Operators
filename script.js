@@ -51,36 +51,56 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+/*==============LOOPING OBJECTS/KEYS/VALUES/ENTRIES ============== */
+// Property NAMES
+const properties = Object.keys(openingHours);
+console.log(properties);
+let openStr = `We are open on ${properties.length} days: `;
+for (const day of properties) {
+  openStr += `${day}, `;
+}
+console.log(openStr);
+// Property VALUES
+const values = Object.values(openingHours);
+console.log(values);
+// Entire object
+const entries = Object.entries(openingHours);
+// console.log(entries);
+
+// [key, value]
+for (const [day, { open, close }] of entries) {
+  console.log(`On ${day} we open at ${open} and close at ${close}`);
+}
 /*==============OPTIONAL CHAINING ============== */
 
-if (restaurant.openingHours && restaurant.openingHours.mon)
-  console.log(restaurant.openingHours.mon.open);
-//console.log(restaurant.openingHours.mon.open);
+// if (restaurant.openingHours && restaurant.openingHours.mon)
+//   console.log(restaurant.openingHours.mon.open);
+// //console.log(restaurant.openingHours.mon.open);
 
-//WITH OPTIONAL CHAINING
-console.log(restaurant.openingHours.mon?.open);
-console.log(restaurant.openingHours.mon?.open);
+// //WITH OPTIONAL CHAINING
+// console.log(restaurant.openingHours.mon?.open);
+// console.log(restaurant.openingHours.mon?.open);
 
-//EXAMPLE
-const days = ['mon', 'tues', 'wed', 'thu', 'fri', 'sat', 'sun'];
-for (const day of days) {
-  const open = restaurant.openingHours[day]?.open || 'closed';
-  console.log(`On ${day}, we open at ${open}`);
-}
+// //EXAMPLE
+// const days = ['mon', 'tues', 'wed', 'thu', 'fri', 'sat', 'sun'];
+// for (const day of days) {
+//   const open = restaurant.openingHours[day]?.open || 'closed';
+//   console.log(`On ${day}, we open at ${open}`);
+// }
 
-//METHODS
+// //METHODS
 
-console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
-console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist');
+// console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+// console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist');
 
-// ARRAYS
+// // ARRAYS
 
-// const users = [{ name: 'Bravo', email: 'helloBravo.io' }];
-// const users = [];
-console.log(users[0]?.name ?? 'User array empty');
+// // const users = [{ name: 'Bravo', email: 'helloBravo.io' }];
+// // const users = [];
+// console.log(users[0]?.name ?? 'User array empty');
 
-if (users.length > 0) console.log(users[0].name);
-else console.log('user array empty');
+// if (users.length > 0) console.log(users[0].name);
+// else console.log('user array empty');
 
 ///
 /*==============LOOPING ARRAYS : THE FOR-OF LOOP ============== */

@@ -51,45 +51,107 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+/*==============WORKING WITH STRINGS PART 2 ============== */
+const airline = 'TAP Air Mexico';
+
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+//fix  capitalization in name
+
+const passenger = 'bRaVO';
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect =
+  passengerLower[0].toLocaleUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
+
+// comparing email
+
+const email = 'hello@bravo.io';
+const loginEmail = ' Hello@Bravo.Io \n';
+
+//const lowerEmail = loginEmail.toLocaleLowerCase();
+//const trimmedEmail = lowerEmail.trim();
+const normalizedEmail = loginEmail.toLocaleLowerCase().trim();
+
+console.log(normalizedEmail);
+console.log(email === normalizedEmail);
+
+//replacing
+
+const priceGB = '288,97£';
+const priceUS = priceGB.replace('£', '$').replace(',', '.');
+console.log(priceUS);
+
+const announcement =
+  'All passengers come to boarding door 23. Boarding door 23!';
+console.log(announcement.replace('door', 'gate'));
+console.log(announcement.replaceAll('door', 'gate'));
+console.log(announcement.replace(/door/g, 'gate'));
+
+// booleans
+
+const plane = 'AIRBUS A32neo';
+console.log(plane.includes('A320'));
+console.log(plane.includes('BOEING'));
+console.log(plane.startsWith('AIR'));
+
+if (plane.startsWith('AIRBUS') && plane.endsWith('neo')) {
+  console.log('part of the AIRBUS FAMILY');
+}
+
+//practice exercise
+
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You are NOT allowed on board');
+  } else {
+    console.log('Welcome aboard!');
+  }
+};
+checkBaggage('I have a laptop, some Food and a pocket Knife');
+checkBaggage('Socks and camera');
+checkBaggage('Got some snacks and a gun for protection');
 /*==============WORKING WITH STRINGS PART 1 ============== */
 
-const airline = 'TAP Air Mexico';
-const plane = 'A320';
+// const airline = 'TAP Air Mexico';
+// const plane = 'A320';
 
-console.log(plane[0]);
-console.log(plane[1]);
-console.log(plane[2]);
-console.log('B737'[0]);
+// console.log(plane[0]);
+// console.log(plane[1]);
+// console.log(plane[2]);
+// console.log('B737'[0]);
 
-console.log(airline.length);
-console.log('B737');
+// console.log(airline.length);
+// console.log('B737');
 
-console.log(airline.indexOf('r'));
-console.log(airline.lastIndexOf('r'));
-console.log(airline.indexOf('Mexico'));
+// console.log(airline.indexOf('r'));
+// console.log(airline.lastIndexOf('r'));
+// console.log(airline.indexOf('Mexico'));
 
-console.log(airline.slice(4));
-console.log(airline.slice(4, 8));
+// console.log(airline.slice(4));
+// console.log(airline.slice(4, 8));
 
-console.log(airline.slice(0, airline.indexOf('')));
-console.log(airline.slice(airline.lastIndexOf('') + 1));
+// console.log(airline.slice(0, airline.indexOf('')));
+// console.log(airline.slice(airline.lastIndexOf('') + 1));
 
-console.log(airline.slice(-2));
-console.log(airline.slice(1, -1));
+// console.log(airline.slice(-2));
+// console.log(airline.slice(1, -1));
 
-const checkMiddleSeat = function (seat) {
-  //B and E are middle seats
-  const s = seat.slice(-1);
-  if (s === 'B' || s === 'E') console.log('You got the middle seat 😱');
-  else console.log('You GOT LUCKY 😎');
-};
+// const checkMiddleSeat = function (seat) {
+//   //B and E are middle seats
+//   const s = seat.slice(-1);
+//   if (s === 'B' || s === 'E') console.log('You got the middle seat 😱');
+//   else console.log('You GOT LUCKY 😎');
+// };
 
-checkMiddleSeat('11B');
-checkMiddleSeat('23C');
-checkMiddleSeat('3E');
+// checkMiddleSeat('11B');
+// checkMiddleSeat('23C');
+// checkMiddleSeat('3E');
 
-console.log(new String('Bravo'));
-console.log(typeof new String('Bravo'));
+// console.log(new String('Bravo'));
+// console.log(typeof new String('Bravo'));
 
 /*==============CODING CHALLENGE 3 ============== */
 // Let's continue with our football betting app! This time, we have a map with a log of the events that happened during the game. The values are the events themselves, and the keys are the minutes in which each event happened (a football game has 90 minutes plus some extra time).
